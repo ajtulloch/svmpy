@@ -7,7 +7,7 @@
 --------------
 
 This is a basic implementation of a soft-margin kernel SVM solver in
-Python using :code:`numpy` and :code:`cvxopt`.
+Python using `numpy` and `cvxopt`.
 
 
 --------------

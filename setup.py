@@ -1,8 +1,9 @@
 from setuptools import setup
 
 setup(name='svmpy',
-      version='0.1',
+      version='0.2.2',
       description='Naive SVM library in Python',
+      long_description=open("README.rst").read(),
       url='http://github.com/ajtulloch/svmpy',
       author='Andrew Tulloch',
       author_email='andrew@tullo.ch',
