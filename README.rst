@@ -2,6 +2,8 @@
  SVMPy
 =======
 
+By Andrew Tulloch (http://tullo.ch)
+
 --------------
  Introduction
 --------------
@@ -9,6 +11,8 @@
 This is a basic implementation of a soft-margin kernel SVM solver in
 Python using `numpy` and `cvxopt`.
 
+See http://tullo.ch/articles/svm-py/ for a description of the
+algorithm used and the general theory behind SVMs.
 
 --------------
  Demonstration
@@ -40,4 +44,5 @@ For example,
 yields the image
 
 .. image:: http://i.imgur.com/yy0oUVk.png
+
 
