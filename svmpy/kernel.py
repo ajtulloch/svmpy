@@ -8,33 +8,25 @@ class Kernel(object):
     """
     @staticmethod
     def linear():
-        def f(x, y):
-            return np.inner(x, y)
-        return f
+        return lambda x, y: np.inner(x, y)
 
     @staticmethod
     def gaussian(sigma):
-        def f(x, y):
-            exponent = -np.sqrt(la.norm(x-y) ** 2 / (2 * sigma ** 2))
-            return np.exp(exponent)
-        return f
+        return lambda x, y: \
+            np.exp(-np.sqrt(la.norm(x-y) ** 2 / (2 * sigma ** 2)))
 
     @staticmethod
     def _polykernel(dimension, offset):
-        def f(x, y):
-            return (offset + np.dot(x, y)) ** dimension
-        return f
+        return lambda x, y: (offset + np.dot(x, y)) ** dimension
 
-    @staticmethod
-    def inhomogenous_polynomial(dimension):
-        return Kernel._polykernel(dimension=dimension, offset=1.0)
+    @classmethod
+    def inhomogenous_polynomial(cls, dimension):
+        return cls._polykernel(dimension=dimension, offset=1.0)
 
-    @staticmethod
-    def homogenous_polynomial(dimension):
-        return Kernel._polykernel(dimension=dimension, offset=0.0)
+    @classmethod
+    def homogenous_polynomial(cls, dimension):
+        return cls._polykernel(dimension=dimension, offset=0.0)
 
     @staticmethod
     def hyperbolic_tangent(kappa, c):
-        def f(x, y):
-            return np.tanh(kappa * np.dot(x, y) + c)
-        return f
+        return lambda x, y: np.tanh(kappa * np.dot(x, y) + c)
