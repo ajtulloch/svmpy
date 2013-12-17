@@ -46,3 +46,9 @@ yields the image
 .. image:: http://i.imgur.com/yy0oUVk.png
 
 
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/ajtulloch/svmpy/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
