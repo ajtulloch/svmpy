@@ -83,18 +83,7 @@ class SVMTrainer(object):
         A = cvxopt.matrix(y, (1, n_samples))
         b = cvxopt.matrix(0.0)
 
-        logging.info("P: %s", P)
-        logging.info("q: %s", q)
-        logging.info("G: %s", G)
-        logging.info("h: %s", h)
-        logging.info("A: %s", A)
-        logging.info("b: %s", b)
-        solution = cvxopt.solvers.qp(P,
-                                     q,
-                                     G,
-                                     h,
-                                     A,
-                                     b)
+        solution = cvxopt.solvers.qp(P, q, G, h, A, b)
 
         # Lagrange multipliers
         return np.ravel(solution['x'])
