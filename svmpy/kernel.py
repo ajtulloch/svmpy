@@ -17,7 +17,7 @@ class Kernel(object):
 
     @staticmethod
     def _polykernel(dimension, offset):
-        return lambda x, y: (offset + np.dot(x, y)) ** dimension
+        return lambda x, y: (offset + np.inner(x, y)) ** dimension
 
     @classmethod
     def inhomogenous_polynomial(cls, dimension):
