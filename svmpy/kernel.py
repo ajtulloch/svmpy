@@ -30,3 +30,7 @@ class Kernel(object):
     @staticmethod
     def hyperbolic_tangent(kappa, c):
         return lambda x, y: np.tanh(kappa * np.dot(x, y) + c)
+
+    @staticmethod
+    def radial_basis(gamma=10):
+        return lambda x, y: np.exp(-gamma*la.norm(np.subtract(x, y)))
